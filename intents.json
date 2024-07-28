@@ -1,0 +1,42 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening", "Good afternoon"],
+        "responses": ["Hello! How can I assist you today?", "Hi there! How can I help you?", "Hello!", "Hi there!", "Hey!", "Good morning!"]
+      },
+      {
+        "tag": "computing_faculty",
+        "patterns": ["Tell me about the computing faculty", "What does the computing faculty offer?", "Computing faculty details","tell me about faculty of computing","i need to know about faculty of computing","foc","computing faculty details","computing faculty information"],
+        "responses": ["The Computing Faculty at General Sir John Kotelawala Defence University offers various undergraduate and postgraduate programs. You can learn more about them on our website."]
+      },
+      {
+        "tag": "course_curriculum",
+        "patterns": ["Tell me about the course curriculum", "What is the curriculum for computing?", "Course details"],
+        "responses": ["The course curriculum for the computing faculty includes subjects like Computer Science, Software Engineering, Cyber Security, and more. Visit our website for detailed information."]
+      },
+      {
+        "tag": "university_details",
+        "patterns": ["Tell me about the university", "General Sir John Kotelawala Defence University details", "University information","I need to know about kdu"],
+        "responses": ["General Sir John Kotelawala Defence University is a prestigious institution offering various programs in defence studies, computing, engineering, and more. Visit our website for more information."]
+      },
+      {
+        "tag": "farewell",
+        "patterns": ["Bye", "See you", "Goodbye", "See you later"],
+        "responses": ["Goodbye!", "See you later!", "Bye!"]
+      },
+      {
+        "tag": "kdu_info",
+        "patterns": ["Tell me about KDU", "What is KDU?", "KDU information", "Details about KDU"],
+        "responses": [
+          "Kotelawala Defence University (KDU) offers various degree programs in engineering, IT, medicine, and more. How can I help you with information about KDU?"
+        ]
+      },
+      {
+        "tag": "unknown",
+        "patterns": [],
+        "responses": ["I'm sorry, I don't understand that. Can you please rephrase?"]
+      }
+    ]
+  }
+  
