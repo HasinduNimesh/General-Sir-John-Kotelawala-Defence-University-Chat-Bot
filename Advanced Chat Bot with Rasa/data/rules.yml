@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+- rule: greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: farewell
+  - action: utter_farewell
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Handle course fees query
+  steps:
+  - intent: course_fees_computer_science
+  - action: utter_course_fees_computer_science
+
+- rule: Handle degrees count query
+  steps:
+  - intent: degrees_count
+  - action: utter_degrees_count
+
+- rule: Handle faculties count query
+  steps:
+  - intent: faculties_count
+  - action: utter_faculties_count
+
+- rule: Handle KDU branches query
+  steps:
+  - intent: kdu_branches
+  - action: utter_kdu_branches

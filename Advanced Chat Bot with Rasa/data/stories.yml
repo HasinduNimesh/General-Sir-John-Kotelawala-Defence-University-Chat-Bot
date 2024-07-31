@@ -1,0 +1,52 @@
+version: "3.1"
+
+stories:
+- story: greet and ask for details
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: computing faculty path
+  steps:
+  - intent: computing_faculty
+  - action: utter_computing_faculty
+
+- story: course curriculum path
+  steps:
+  - intent: course_curriculum
+  - action: utter_course_curriculum
+
+- story: university details path
+  steps:
+  - intent: university_details
+  - action: utter_university_details
+
+- story: farewell path
+  steps:
+  - intent: farewell
+  - action: utter_farewell
+
+- story: kdu info path
+  steps:
+  - intent: kdu_info
+  - action: utter_kdu_info
+
+- story: User asks about course fees for computer science
+  steps:
+  - intent: course_fees_computer_science
+  - action: utter_course_fees_computer_science
+
+- story: User asks about degrees count
+  steps:
+  - intent: degrees_count
+  - action: utter_degrees_count
+
+- story: User asks about faculties count
+  steps:
+  - intent: faculties_count
+  - action: utter_faculties_count
+
+- story: User asks about KDU branches
+  steps:
+  - intent: kdu_branches
+  - action: utter_kdu_branches
