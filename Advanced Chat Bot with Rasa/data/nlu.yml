@@ -1,0 +1,75 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+      - Good morning
+      - Good evening
+
+  - intent: computing_faculty
+    examples: |
+      - Tell me about the computing faculty
+      - What does the computing faculty offer?
+      - Computing faculty details
+      - Tell me about faculty of computing
+      - I need to know about faculty of computing
+      - foc
+      - computing faculty details
+      - computing faculty information
+
+  - intent: course_curriculum
+    examples: |
+      - Tell me about the course curriculum
+      - What is the curriculum for computing?
+      - Course details
+
+  - intent: university_details
+    examples: |
+      - Tell me about the university
+      - General Sir John Kotelawala Defence University details
+      - University information
+      - I need to know about KDU
+
+  - intent: farewell
+    examples: |
+      - Bye
+      - See you
+      - Goodbye
+      - See you later
+
+  - intent: kdu_info
+    examples: |
+      - Tell me about KDU
+      - What is KDU?
+      - KDU information
+      - Details about KDU
+
+  - intent: course_fees
+    examples: |
+      - What are the course fees for a computer science degree?
+      - How much is the fee for a software engineering degree?
+      - Tell me the fees for a computer engineering degree.
+      - What is the fee for a data science degree?
+      - How much is the fee for an IT degree?
+      - Course fees for information systems?
+
+  - intent: degrees_count
+    examples: |
+      - How many degrees are offered in KDU?
+      - Number of degree programs at KDU?
+      - List all degrees available at KDU.
+
+  - intent: faculties_count
+    examples: |
+      - How many faculties are there in KDU?
+      - Number of faculties at KDU?
+      - Tell me the number of faculties in KDU.
+
+  - intent: kdu_branches
+    examples: |
+      - Where are the KDU branches located?
+      - List the branches of KDU.
+      - KDU branch locations?
