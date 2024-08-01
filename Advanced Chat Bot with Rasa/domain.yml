@@ -16,8 +16,8 @@ intents:
   - degrees_count
   - faculties_count
   - kdu_branches
-  - goodbye
   - bot_challenge
+  - course_types_foc
 
 responses:
   utter_greet:
@@ -70,3 +70,6 @@ responses:
 
   utter_iamabot:
     - text: "I am a bot, here to assist you with your queries."
+
+  utter_course_types_foc:
+    - text: "The Faculty of Computing offers the following courses: Computer Science, Software Engineering, Computer Engineering, Data Science, Information Technology, and Information Systems."

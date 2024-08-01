@@ -47,13 +47,52 @@ nlu:
       - KDU information
       - Details about KDU
 
-  - intent: course_fees
+  - intent: course_fees_computer_science
     examples: |
       - What are the course fees for a computer science degree?
+      - How much is the fee for a computer science degree?
+      - Tell me the fees for a computer science degree
+      - What is the fee for a computer science course?
+      - Course fees for computer science?
+
+  - intent: course_fees_software_engineering
+    examples: |
+      - What are the course fees for a software engineering degree?
       - How much is the fee for a software engineering degree?
-      - Tell me the fees for a computer engineering degree.
-      - What is the fee for a data science degree?
+      - Tell me the fees for a software engineering degree
+      - What is the fee for a software engineering course?
+      - Course fees for software engineering?
+
+  - intent: course_fees_computer_engineering
+    examples: |
+      - What are the course fees for a computer engineering degree?
+      - How much is the fee for a computer engineering degree?
+      - Tell me the fees for a computer engineering degree
+      - What is the fee for a computer engineering course?
+      - Course fees for computer engineering?
+
+  - intent: course_fees_data_science
+    examples: |
+      - What are the course fees for a data science degree?
+      - How much is the fee for a data science degree?
+      - Tell me the fees for a data science degree
+      - What is the fee for a data science course?
+      - Course fees for data science?
+
+  - intent: course_fees_it
+    examples: |
+      - What are the course fees for an IT degree?
       - How much is the fee for an IT degree?
+      - Tell me the fees for an IT degree
+      - What is the fee for an IT course?
+      - Course fees for IT?
+
+  - intent: course_fees_information_systems
+    examples: |
+      - What are the course fees for an information systems degree?
+      - How much is the fee for an information systems degree?
+      - Tell me the fees for an information systems degree
+      - What is the fee for an information systems course?
       - Course fees for information systems?
 
   - intent: degrees_count
@@ -73,3 +112,17 @@ nlu:
       - Where are the KDU branches located?
       - List the branches of KDU.
       - KDU branch locations?
+
+  - intent: bot_challenge
+    examples: |
+      - Are you a bot?
+      - What are you?
+      - Are you human or bot?
+      - Tell me who you are
+
+  - intent: course_types_foc
+    examples: |
+      - What are the types of courses offered by the Faculty of Computing?
+      - List all courses offered by the Faculty of Computing
+      - What programs does the Faculty of Computing have?
+      - Which courses are available in the Faculty of Computing?
