@@ -126,3 +126,13 @@ nlu:
       - List all courses offered by the Faculty of Computing
       - What programs does the Faculty of Computing have?
       - Which courses are available in the Faculty of Computing?
+
+  - intent: degree_fee_payment_terms
+    examples: |
+      - What are the fees and payment terms for BSc (Hons) in Computer Science?
+      - Tell me about the payment terms for BSc (Hons) in Software Engineering
+      - How can I pay for the Computer Engineering course?
+      - Give me details on the fees and payment structure for Data Science
+      - What are the payment options for IT degree?
+      - Can I pay for Information Systems in installments?
+

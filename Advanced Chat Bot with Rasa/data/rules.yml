@@ -1,67 +1,93 @@
 version: "3.1"
 
 rules:
-- rule: greet user
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - rule: Greet
+    steps:
+      - intent: greet
+      - action: utter_greet
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: farewell
-  - action: utter_farewell
+  - rule: Farewell
+    steps:
+      - intent: farewell
+      - action: utter_farewell
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - rule: Computing Faculty Information
+    steps:
+      - intent: computing_faculty
+      - action: utter_computing_faculty
 
-- rule: Handle course fees query
-  steps:
-  - intent: course_fees_computer_science
-  - action: utter_course_fees_computer_science
+  - rule: Course Curriculum Information
+    steps:
+      - intent: course_curriculum
+      - action: utter_course_curriculum
 
-- rule: Handle course fees query for software engineering
-  steps:
-  - intent: course_fees_software_engineering
-  - action: utter_course_fees_software_engineering
+  - rule: University Details
+    steps:
+      - intent: university_details
+      - action: utter_university_details
 
-- rule: Handle course fees query for computer engineering
-  steps:
-  - intent: course_fees_computer_engineering
-  - action: utter_course_fees_computer_engineering
+  - rule: KDU Information
+    steps:
+      - intent: kdu_info
+      - action: utter_kdu_info
 
-- rule: Handle course fees query for data science
-  steps:
-  - intent: course_fees_data_science
-  - action: utter_course_fees_data_science
+  - rule: Course Fees - Computer Science
+    steps:
+      - intent: course_fees_computer_science
+      - action: utter_course_fees_computer_science
 
-- rule: Handle course fees query for IT
-  steps:
-  - intent: course_fees_it
-  - action: utter_course_fees_it
+  - rule: Course Fees - Software Engineering
+    steps:
+      - intent: course_fees_software_engineering
+      - action: utter_course_fees_software_engineering
 
-- rule: Handle course fees query for information systems
-  steps:
-  - intent: course_fees_information_systems
-  - action: utter_course_fees_information_systems
+  - rule: Course Fees - Computer Engineering
+    steps:
+      - intent: course_fees_computer_engineering
+      - action: utter_course_fees_computer_engineering
 
-- rule: Handle degrees count query
-  steps:
-  - intent: degrees_count
-  - action: utter_degrees_count
+  - rule: Course Fees - Data Science
+    steps:
+      - intent: course_fees_data_science
+      - action: utter_course_fees_data_science
 
-- rule: Handle faculties count query
-  steps:
-  - intent: faculties_count
-  - action: utter_faculties_count
+  - rule: Course Fees - IT
+    steps:
+      - intent: course_fees_it
+      - action: utter_course_fees_it
 
-- rule: Handle KDU branches query
-  steps:
-  - intent: kdu_branches
-  - action: utter_kdu_branches
+  - rule: Course Fees - Information Systems
+    steps:
+      - intent: course_fees_information_systems
+      - action: utter_course_fees_information_systems
 
-- rule: Handle course types query for Faculty of Computing
-  steps:
-  - intent: course_types_foc
-  - action: utter_course_types_foc
+  - rule: Number of Degrees at KDU
+    steps:
+      - intent: degrees_count
+      - action: utter_degrees_count
+
+  - rule: Number of Faculties at KDU
+    steps:
+      - intent: faculties_count
+      - action: utter_faculties_count
+
+  - rule: KDU Branches
+    steps:
+      - intent: kdu_branches
+      - action: utter_kdu_branches
+
+  - rule: Bot Challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Course Types - Faculty of Computing
+    steps:
+      - intent: course_types_foc
+      - action: utter_course_types_foc
+
+  - rule: Degree Fee Payment Terms
+    steps:
+      - intent: degree_fee_payment_terms
+      - action: utter_degree_fee_payment_terms
+

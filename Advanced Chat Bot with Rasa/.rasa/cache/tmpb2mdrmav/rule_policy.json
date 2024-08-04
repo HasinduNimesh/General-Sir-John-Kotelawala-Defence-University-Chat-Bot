@@ -1,0 +1,50 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_computer_engineering\"}}]": "utter_course_fees_computer_engineering",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_computer_engineering\"}}, {\"prev_action\": {\"action_name\": \"utter_course_fees_computer_engineering\"}, \"user\": {\"intent\": \"course_fees_computer_engineering\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_software_engineering\"}}]": "utter_course_fees_software_engineering",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_software_engineering\"}}, {\"prev_action\": {\"action_name\": \"utter_course_fees_software_engineering\"}, \"user\": {\"intent\": \"course_fees_software_engineering\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_types_foc\"}}]": "utter_course_types_foc",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_types_foc\"}}, {\"prev_action\": {\"action_name\": \"utter_course_types_foc\"}, \"user\": {\"intent\": \"course_types_foc\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"degrees_count\"}}]": "utter_degrees_count",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"degrees_count\"}}, {\"prev_action\": {\"action_name\": \"utter_degrees_count\"}, \"user\": {\"intent\": \"degrees_count\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_data_science\"}}]": "utter_course_fees_data_science",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_data_science\"}}, {\"prev_action\": {\"action_name\": \"utter_course_fees_data_science\"}, \"user\": {\"intent\": \"course_fees_data_science\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_computer_science\"}}]": "utter_course_fees_computer_science",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_computer_science\"}}, {\"prev_action\": {\"action_name\": \"utter_course_fees_computer_science\"}, \"user\": {\"intent\": \"course_fees_computer_science\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_it\"}}]": "utter_course_fees_it",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_it\"}}, {\"prev_action\": {\"action_name\": \"utter_course_fees_it\"}, \"user\": {\"intent\": \"course_fees_it\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_information_systems\"}}]": "utter_course_fees_information_systems",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_fees_information_systems\"}}, {\"prev_action\": {\"action_name\": \"utter_course_fees_information_systems\"}, \"user\": {\"intent\": \"course_fees_information_systems\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"faculties_count\"}}]": "utter_faculties_count",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"faculties_count\"}}, {\"prev_action\": {\"action_name\": \"utter_faculties_count\"}, \"user\": {\"intent\": \"faculties_count\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kdu_branches\"}}]": "utter_kdu_branches",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kdu_branches\"}}, {\"prev_action\": {\"action_name\": \"utter_kdu_branches\"}, \"user\": {\"intent\": \"kdu_branches\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_curriculum\"}}]": "utter_course_curriculum",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"course_curriculum\"}}, {\"prev_action\": {\"action_name\": \"utter_course_curriculum\"}, \"user\": {\"intent\": \"course_curriculum\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"farewell\"}}]": "utter_farewell",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"farewell\"}}, {\"prev_action\": {\"action_name\": \"utter_farewell\"}, \"user\": {\"intent\": \"farewell\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"computing_faculty\"}}]": "utter_computing_faculty",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"computing_faculty\"}}, {\"prev_action\": {\"action_name\": \"utter_computing_faculty\"}, \"user\": {\"intent\": \"computing_faculty\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"university_details\"}}]": "utter_university_details",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"university_details\"}}, {\"prev_action\": {\"action_name\": \"utter_university_details\"}, \"user\": {\"intent\": \"university_details\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"degree_fee_payment_terms\"}}]": "utter_degree_fee_payment_terms",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"degree_fee_payment_terms\"}}, {\"prev_action\": {\"action_name\": \"utter_degree_fee_payment_terms\"}, \"user\": {\"intent\": \"degree_fee_payment_terms\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kdu_info\"}}]": "utter_kdu_info",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kdu_info\"}}, {\"prev_action\": {\"action_name\": \"utter_kdu_info\"}, \"user\": {\"intent\": \"kdu_info\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "predicting default action with intent back"
+    ]
+  }
+}

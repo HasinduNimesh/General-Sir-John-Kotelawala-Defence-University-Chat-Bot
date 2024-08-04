@@ -18,6 +18,7 @@ intents:
   - kdu_branches
   - bot_challenge
   - course_types_foc
+  - degree_fee_payment_terms
 
 responses:
   utter_greet:
@@ -27,7 +28,7 @@ responses:
     - text: "Goodbye! Have a great day!"
 
   utter_computing_faculty:
-    - text: "The Faculty of Computing offers various degrees including Computer Science, Software Engineering, and Computer Engineering."
+    - text: "The Faculty of Computing offers various degrees including Computer Science, Software Engineering, Computer Engineering, Data Science, Information Technology, and Information Systems."
 
   utter_course_curriculum:
     - text: "The course curriculum varies depending on the degree. For details, please specify the degree you're interested in."
@@ -63,13 +64,20 @@ responses:
     - text: "KDU has numerous faculties. For the exact number, please refer to the university's official website."
 
   utter_kdu_branches:
-    - text: "KDU has multiple branches across the country. You can find detailed information on their official website."
-
-  utter_goodbye:
-    - text: "Goodbye! Have a great day!"
+    - text: "KDU has three branches across the country. The branches are located in Ratmalana, Sooriyawewa, and the KDU Metropolitan Campus in Colombo. The Ratmalana branch offers degrees in Computer Science (CS), Software Engineering (SE), and Computer Engineering (CE). The Sooriyawewa branch offers degrees in Information Technology (IT) and Information Systems (IS). For more detailed information, including addresses and contact information, please visit the official KDU website."
 
   utter_iamabot:
     - text: "I am a bot, here to assist you with your queries."
 
   utter_course_types_foc:
     - text: "The Faculty of Computing offers the following courses: Computer Science, Software Engineering, Computer Engineering, Data Science, Information Technology, and Information Systems."
+
+  utter_degree_fee_payment_terms:
+    - text: "Here are the fees and payment terms for the degrees offered at KDU:
+      \n- BSc (Hons) in Computer Science: 1,600,000.00 LKR (Payable in 3 terms: 40%, 30%, 30%)
+      \n- BSc (Hons) in Software Engineering: 1,600,000.00 LKR (Payable in 3 terms: 40%, 30%, 30%)
+      \n- BSc (Hons) in Computer Engineering: 2,000,000.00 LKR (Payable in 3 terms: 40%, 30%, 30%)
+      \n- BSc (Hons) in Data Science and Business Analytics: 1,800,000.00 LKR (Payable in 3 terms: 40%, 30%, 30%)
+      \n- BSc (Hons) in Information Technology: 1,000,000.00 LKR (Payable in 3 terms: 40%, 30%, 30%)
+      \n- BSc (Hons) in Information Systems: 1,000,000.00 LKR (Payable in 3 terms: 40%, 30%, 30%)"
+
