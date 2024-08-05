@@ -1,0 +1,130 @@
+version: "3.1"
+
+intents:
+  - greet
+  - farewell
+  - computing_faculty
+  - course_curriculum
+  - university_details
+  - kdu_info
+  - course_fees_computer_science
+  - course_fees_software_engineering
+  - course_fees_computer_engineering
+  - course_fees_data_science
+  - course_fees_it
+  - course_fees_information_systems
+  - degrees_count
+  - faculties_count
+  - kdu_branches
+  - bot_challenge
+  - course_types_foc
+  - degree_fee_payment_terms
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_farewell:
+    - text: "Goodbye! Have a great day!"
+
+  utter_computing_faculty:
+    - text: "The Faculty of Computing offers various degrees including Computer Science, Software Engineering, Computer Engineering, Data Science, Information Technology, and Information Systems."
+
+  utter_course_curriculum:
+    - text: "The course curriculum varies depending on the degree. For details, please specify the degree you're interested in."
+
+  utter_university_details:
+    - text: "General Sir John Kotelawala Defence University is a prestigious university with a range of faculties and courses."
+
+  utter_kdu_info:
+    - text: "KDU stands for General Sir John Kotelawala Defence University. It's known for its diverse academic programs."
+
+  utter_course_fees_computer_science:
+    - text: "The course fees for BSc (Hons) in Computer Science are 1,600,000.00 LKR."
+
+  utter_course_fees_software_engineering:
+    - text: "The course fees for BSc (Hons) in Software Engineering are 1,600,000.00 LKR."
+
+  utter_course_fees_computer_engineering:
+    - text: "The course fees for BSc (Hons) in Computer Engineering are 2,000,000.00 LKR."
+
+  utter_course_fees_data_science:
+    - text: "The course fees for BSc (Hons) in Data Science and Business Analytics are 1,800,000.00 LKR."
+
+  utter_course_fees_it:
+    - text: "The course fees for BSc (Hons) in Information Technology are 1,000,000.00 LKR."
+
+  utter_course_fees_information_systems:
+    - text: "The course fees for BSc (Hons) in Information Systems are 1,000,000.00 LKR."
+
+  utter_degrees_count:
+    - text: "KDU offers several degrees in various fields. For a detailed list, please visit the university's website."
+
+  utter_faculties_count:
+    - text: "KDU has 10 faculties:
+
+Faculty of Defence & Strategic Studies (FDSS)
+Faculty of Medicine (FOM)
+Faculty of Engineering (FOE)
+Faculty of Law (FOL)
+Faculty of Technology (FOT)
+Faculty of Management, Social Sciences and Humanities (FMSH)
+Faculty of Computing (FOC)
+Faculty of Allied Health Sciences (FAHS)
+Faculty of Built Environment and Spatial Sciences (FBESS)
+Faculty of Criminal Justice (FOCJ)"
+
+  utter_kdu_branches:
+    - text: "KDU has three branches across the country. The branches are located in Ratmalana, Sooriyawewa, and the KDU Metropolitan Campus in Colombo. The Ratmalana branch offers degrees in Computer Science (CS), Software Engineering (SE), and Computer Engineering (CE). The Sooriyawewa branch offers degrees in Information Technology (IT) and Information Systems (IS). For more detailed information, including addresses and contact information, please visit the official KDU website."
+
+  utter_iamabot:
+    - text: "I am a bot, here to assist you with your queries."
+
+  utter_course_types_foc:
+    - text: "The Faculty of Computing offers the following courses: Computer Science, Software Engineering, Computer Engineering, Data Science, Information Technology, and Information Systems."
+
+  utter_degree_fee_payment_terms:
+    - text: |
+        Here are the fees and payment terms for the degrees offered at KDU:
+        <table border="1" style="border-collapse: collapse; width: 100%;">
+          <thead>
+            <tr>
+              <th style="padding: 8px; border: 1px solid #ddd; background-color: #f4f4f4;">Degree</th>
+              <th style="padding: 8px; border: 1px solid #ddd; background-color: #f4f4f4;">Fee (LKR)</th>
+              <th style="padding: 8px; border: 1px solid #ddd; background-color: #f4f4f4;">Payment Terms</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">BSc (Hons) in Computer Science</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1,600,000</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Payable in 3 terms: 40%, 30%, 30%</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">BSc (Hons) in Software Engineering</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1,600,000</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Payable in 3 terms: 40%, 30%, 30%</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">BSc (Hons) in Computer Engineering</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">2,000,000</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Payable in 3 terms: 40%, 30%, 30%</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">BSc (Hons) in Data Science and Business Analytics</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1,800,000</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Payable in 3 terms: 40%, 30%, 30%</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">BSc (Hons) in Information Technology</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1,000,000</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Payable in 3 terms: 40%, 30%, 30%</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">BSc (Hons) in Information Systems</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1,000,000</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Payable in 3 terms: 40%, 30%, 30%</td>
+            </tr>
+          </tbody>
+        </table>
+

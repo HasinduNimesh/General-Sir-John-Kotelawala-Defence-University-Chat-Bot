@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Consolas, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url("{{ url_for('static', filename='images/bck.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #2bb1ea33;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+        }
+
+        .chat-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .chat-header {
+            background-color: #006de2;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f9f9f925;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 80%;
+    position: relative;
+    word-wrap: break-word;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the end of the flex container */
+}
+
+.chat-message.user {
+    background-color: #007bff;
+    color: #fff;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+    border-top-left-radius: 15px;
+    justify-content: flex-end; /* Ensure button is on the right for user messages */
+}
+
+.chat-message.bot {
+    background-color: #e9ecef;
+    color: #000;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    border-top-right-radius: 15px;
+    justify-content: flex-start; /* Ensure button is on the left for bot messages */
+}
+
+.chat-message .copy-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000; /* Default color */
+}
+
+.chat-message.user .copy-btn {
+    color: #ffffffa7; /* User message button color */
+}
+
+.chat-message.bot .copy-btn {
+    color: #000; /* Bot message button color */
+}
+
+.chat-message:hover .copy-btn {
+    display: block;
+}
+
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #e9ecef00;
+            background-color: #76a3d2c0;
+            padding: 10px;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .chat-input input {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            color: #000000;
+            outline: none;
+            font-family: Consolas, monospace;
+            background-color: #87a2bf;
+            border-radius: 15px;
+            margin-right: 10px;
+        }
+
+        .chat-input input::placeholder {
+            color: #000000;
+        }
+
+        .chat-input button {
+            background-color: #004692d8;
+            border: none;
+            color: #ffffff;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-family: Consolas, monospace;
+            font-size: 17px;
+            border-radius: 15px;
+        }
+
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+
+        .chat-input .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 4px solid rgba(0, 123, 255, 0);
+            border-top-color: #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .chat-container {
+                flex-direction: column;
+            }
+
+            .chat-header {
+                font-size: 16px;
+            }
+
+            .chat-input input, .chat-input button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .chat-message {
+                font-size: 14px;
+            }
+        }
+    /* Additional styles for voice controls */
+    .voice-controls {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #76a3d2c0;
+            border-top: 1px solid #e9ecef00;
+        }
+
+        .voice-controls button {
+            background-color: #004692d8;
+            border: none;
+            color: #ffffff;
+            padding: 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-family: Consolas, monospace;
+            font-size: 17px;
+            border-radius: 15px;
+        }
+
+        .voice-controls button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-content">
+            <div class="chat-header">KDU Bot</div>
+            <div class="chat-messages" id="messages"></div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type your message here..." onkeypress="checkEnter(event)">
+                <button onclick="sendMessage()">Send</button>
+                <div class="spinner" id="loading-spinner"></div>
+            </div>
+            <div class="voice-controls">
+                <button onclick="startSpeechRecognition()">Start Speech Recognition</button>
+                <button onclick="stopSpeechRecognition()">Stop Speech Recognition</button>
+                <button onclick="speakMessage()">Speak Last Message</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        var socket = io(); // Initialize Socket.IO
+        var recognition;
+        var recognizing = false;
+
+        // Handle incoming messages from the server
+        socket.on('response', function(data) {
+            document.getElementById('loading-spinner').style.display = 'none'; // Hide spinner when response is received
+            if (data.message.includes('<table')) {
+                displayHTMLContent(data.message);
+            } else {
+                simulateTypingEffect(data.message);
+            }
+        });
+
+        // Add message to the chat window
+        function addMessage(sender, message) {
+            var messagesDiv = document.getElementById('messages');
+            var newMessage = document.createElement('div');
+            newMessage.classList.add('chat-message', sender);
+            
+            // Add the copy button
+            var copyButton = document.createElement('button');
+            copyButton.classList.add('copy-btn');
+            copyButton.innerHTML = '<i class="fas fa-copy"></i>'; // Font Awesome copy icon
+            copyButton.onclick = function() {
+                navigator.clipboard.writeText(message).then(function() {
+                    alert('Message copied to clipboard!');
+                });
+            };
+
+            newMessage.innerHTML = message; // Use innerHTML to handle HTML content
+            newMessage.appendChild(copyButton); // Append the copy button
+            messagesDiv.appendChild(newMessage);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        // Simulate typing effect before showing the message
+        function simulateTypingEffect(message) {
+            var messagesDiv = document.getElementById('messages');
+            var typingMessage = document.createElement('div');
+            typingMessage.classList.add('chat-message', 'bot', 'typing');
+            typingMessage.innerHTML = '<div class="message">Typing...</div>';
+            messagesDiv.appendChild(typingMessage);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Simulate typing delay
+            setTimeout(function() {
+                typingMessage.remove();
+                typeMessage(message); // Call function to type the message word-by-word
+            }, 50); // Adjust delay as needed
+        }
+
+        // Type message word-by-word
+        function typeMessage(message) {
+            var messagesDiv = document.getElementById('messages');
+            var newMessage = document.createElement('div');
+            newMessage.classList.add('chat-message', 'bot');
+            messagesDiv.appendChild(newMessage);
+
+            var words = message.split(' ');
+            var index = 0;
+            var interval = setInterval(function() {
+                if (index < words.length) {
+                    newMessage.innerHTML += words[index] + ' ';
+                    index++;
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                } else {
+                    clearInterval(interval);
+                    speakText(message); // Speak the message after typing is complete
+                }
+            }, 50); // Adjust word typing speed as needed
+        }
+
+        // Display HTML content directly
+        function displayHTMLContent(htmlContent) {
+            var messagesDiv = document.getElementById('messages');
+            var newMessage = document.createElement('div');
+            newMessage.classList.add('chat-message', 'bot');
+            newMessage.innerHTML = htmlContent; // Set innerHTML directly
+            messagesDiv.appendChild(newMessage);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        // Send message to the server
+        function sendMessage() {
+            var input = document.getElementById('message-input');
+            var message = input.value.trim();
+            if (message) {
+                addMessage('user', message); // Display user's message
+                input.value = '';
+                document.getElementById('loading-spinner').style.display = 'block'; // Show spinner while waiting for response
+                socket.emit('message', { message: message }); // Send message to server
+            }
+        }
+
+        // Check for Enter key press
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        // Start speech recognition
+        function startSpeechRecognition() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Speech recognition not supported.');
+                return;
+            }
+            
+            recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.onresult = function(event) {
+                var transcript = event.results[0][0].transcript;
+                addMessage('user', transcript); // Display recognized speech as user message
+                socket.emit('message', { message: transcript }); // Send recognized speech to server
+            };
+            recognition.onend = function() {
+                recognizing = false;
+            };
+            recognition.start();
+            recognizing = true;
+        }
+
+        // Stop speech recognition
+        function stopSpeechRecognition() {
+            if (recognizing) {
+                recognition.stop();
+                recognizing = false;
+            }
+        }
+
+        // Speak the message
+        function speakText(text) {
+            var utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            speechSynthesis.speak(utterance);
+        }
+
+        // Speak last message
+        function speakMessage() {
+            var lastMessage = document.querySelector('.chat-message.bot:last-child');
+            if (lastMessage) {
+                var text = lastMessage.innerText || lastMessage.textContent;
+                speakText(text);
+            }
+        }
+    </script>
+</body>
+</html>
