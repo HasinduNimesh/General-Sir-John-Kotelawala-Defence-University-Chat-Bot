@@ -1,0 +1,93 @@
+version: "3.1"
+
+stories:
+  - story: Greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: Farewell
+    steps:
+      - intent: farewell
+      - action: utter_farewell
+
+  - story: Computing Faculty Information
+    steps:
+      - intent: computing_faculty
+      - action: utter_computing_faculty
+
+  - story: Course Curriculum Information
+    steps:
+      - intent: course_curriculum
+      - action: utter_course_curriculum
+
+  - story: University Details
+    steps:
+      - intent: university_details
+      - action: utter_university_details
+
+  - story: KDU Information
+    steps:
+      - intent: kdu_info
+      - action: utter_kdu_info
+
+  - story: Course Fees - Computer Science
+    steps:
+      - intent: course_fees_computer_science
+      - action: utter_course_fees_computer_science
+
+  - story: Course Fees - Software Engineering
+    steps:
+      - intent: course_fees_software_engineering
+      - action: utter_course_fees_software_engineering
+
+  - story: Course Fees - Computer Engineering
+    steps:
+      - intent: course_fees_computer_engineering
+      - action: utter_course_fees_computer_engineering
+
+  - story: Course Fees - Data Science
+    steps:
+      - intent: course_fees_data_science
+      - action: utter_course_fees_data_science
+
+  - story: Course Fees - IT
+    steps:
+      - intent: course_fees_it
+      - action: utter_course_fees_it
+
+  - story: Course Fees - Information Systems
+    steps:
+      - intent: course_fees_information_systems
+      - action: utter_course_fees_information_systems
+
+  - story: Number of Degrees at KDU
+    steps:
+      - intent: degrees_count
+      - action: utter_degrees_count
+
+  - story: Number of Faculties at KDU
+    steps:
+      - intent: faculties_count
+      - action: utter_faculties_count
+
+  - story: KDU Branches
+    steps:
+      - intent: kdu_branches
+      - action: utter_kdu_branches
+
+  - story: Bot Challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - story: Course Types - Faculty of Computing
+    steps:
+      - intent: course_types_foc
+      - action: utter_course_types_foc
+
+  - story: Degree Fee Payment Terms
+    steps:
+      - intent: degree_fee_payment_terms
+      - action: utter_degree_fee_payment_terms
+

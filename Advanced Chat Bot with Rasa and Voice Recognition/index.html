@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background: url('/images/bck.jpg') no-repeat center center fixed; /* Replace 'background.jpg' with the path to your JPG file */
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+            background-size: cover;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #007bff;
+            text-align: center;
+        }
+
+        .sidebar nav {
+            margin-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .sidebar li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .chat-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background-color: #0878f0;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-message .message {
+            max-width: 75%; /* Set the max width for the message bubbles */
+        }
+
+        .chat-message.bot .message {
+            background-color: #e9ecef;
+            border-radius: 10px 10px 10px 0;
+            padding: 10px;
+            word-wrap: break-word;
+        }
+
+        .chat-message.user {
+            align-items: flex-end;
+        }
+
+        .chat-message.user .message {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px 10px 0 10px;
+            padding: 10px;
+            word-wrap: break-word;
+        }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #e9ecef;
+            padding: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .chat-input button {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+
+        .chat-input .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 4px solid rgba(0, 123, 255, 0.2);
+            border-top-color: #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .chat-container {
+                flex-direction: column;
+            }
+
+            .chat-header {
+                font-size: 16px;
+            }
+
+            .chat-input input, .chat-input button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .chat-message .message {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-content">
+            <div class="chat-header">KDU Bot</div>
+            <div class="chat-messages" id="messages"></div>
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type your message here..." onkeypress="checkEnter(event)">
+                <button onclick="sendMessage()">Send</button>
+                <div class="spinner" id="loading-spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on('response', function(data) {
+            addMessage('bot', data.message);
+            document.getElementById('loading-spinner').style.display = 'none';
+        });
+
+        function addMessage(sender, message) {
+            var messagesDiv = document.getElementById('messages');
+            var newMessage = document.createElement('div');
+            newMessage.classList.add('chat-message', sender);
+            newMessage.innerHTML = '<div class="message">' + message + '</div>';
+            messagesDiv.appendChild(newMessage);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function sendMessage() {
+            var messageInput = document.getElementById('message-input');
+            var message = messageInput.value;
+            if (message.trim() !== '') {
+                addMessage('user', message);
+                document.getElementById('loading-spinner').style.display = 'block';
+                socket.emit('message', { message: message });
+                messageInput.value = '';
+            }
+        }
+
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>

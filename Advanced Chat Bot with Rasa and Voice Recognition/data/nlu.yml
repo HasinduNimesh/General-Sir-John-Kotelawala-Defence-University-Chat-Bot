@@ -1,0 +1,169 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+      - Good morning
+      - Good evening
+      - Good afternoon
+      - Hi there
+      - Hello there
+      - Greetings
+      - Hi bot
+      - Hello bot
+      - Hey bot
+      - Hi there bot
+
+  - intent: computing_faculty
+    examples: |
+      - Tell me about the computing faculty
+      - What does the computing faculty offer?
+      - Computing faculty details
+      - Tell me about faculty of computing
+      - I need to know about faculty of computing
+      - foc
+      - computing faculty details
+      - computing faculty information
+      - computing faculty
+
+  - intent: course_curriculum
+    examples: |
+      - Tell me about the course curriculum
+      - What is the curriculum for computing?
+      - Course details
+      - Course curriculum
+      - I need to know about the course curriculum
+      - Course information
+      - Course details
+      - Course curriculum details
+
+
+  - intent: university_details
+    examples: |
+      - Tell me about the university
+      - General Sir John Kotelawala Defence University details
+      - University information
+      - I need to know about KDU
+      - KDU details
+      - KDU information
+      - KDU
+
+  - intent: farewell
+    examples: |
+      - Bye
+      - See you
+      - Goodbye
+      - See you later
+      - Bye bye
+      - Take care
+      - Have a good day
+      - Have a great day
+      - Bye bot
+
+  - intent: kdu_info
+    examples: |
+      - Tell me about KDU
+      - What is KDU?
+      - KDU information
+      - Details about KDU
+
+  - intent: course_fees_computer_science
+    examples: |
+      - What are the course fees for a computer science degree?
+      - How much is the fee for a computer science degree?
+      - Tell me the fees for a computer science degree
+      - What is the fee for a computer science course?
+      - Course fees for computer science?
+
+  - intent: course_fees_software_engineering
+    examples: |
+      - What are the course fees for a software engineering degree?
+      - How much is the fee for a software engineering degree?
+      - Tell me the fees for a software engineering degree
+      - What is the fee for a software engineering course?
+      - Course fees for software engineering?
+
+  - intent: course_fees_computer_engineering
+    examples: |
+      - What are the course fees for a computer engineering degree?
+      - How much is the fee for a computer engineering degree?
+      - Tell me the fees for a computer engineering degree
+      - What is the fee for a computer engineering course?
+      - Course fees for computer engineering?
+
+  - intent: course_fees_data_science
+    examples: |
+      - What are the course fees for a data science degree?
+      - How much is the fee for a data science degree?
+      - Tell me the fees for a data science degree
+      - What is the fee for a data science course?
+      - Course fees for data science?
+
+  - intent: course_fees_it
+    examples: |
+      - What are the course fees for an IT degree?
+      - How much is the fee for an IT degree?
+      - Tell me the fees for an IT degree
+      - What is the fee for an IT course?
+      - Course fees for IT?
+
+  - intent: course_fees_information_systems
+    examples: |
+      - What are the course fees for an information systems degree?
+      - How much is the fee for an information systems degree?
+      - Tell me the fees for an information systems degree
+      - What is the fee for an information systems course?
+      - Course fees for information systems?
+
+  - intent: degrees_count
+    examples: |
+      - How many degrees are offered in KDU?
+      - Number of degree programs at KDU?
+      - List all degrees available at KDU.
+
+  - intent: faculties_count
+    examples: |
+      - How many faculties are there in KDU?
+      - Number of faculties at KDU?
+      - Tell me the number of faculties in KDU.
+      - how many faculties are in there
+      - List all faculties in KDU.
+      - faculties in KDU
+      - faculties
+
+  - intent: kdu_branches
+    examples: |
+      - Where are the KDU branches located?
+      - List the branches of KDU.
+      - KDU branch locations?
+      - Tell me the locations of KDU branches.
+      - KDU branches
+      - KDU branch locations
+      - KDU branch details
+
+  - intent: bot_challenge
+    examples: |
+      - Are you a bot?
+      - What are you?
+      - Are you human or bot?
+      - Tell me who you are
+
+  - intent: course_types_foc
+    examples: |
+      - What are the types of courses offered by the Faculty of Computing?
+      - List all courses offered by the Faculty of Computing
+      - What programs does the Faculty of Computing have?
+      - Which courses are available in the Faculty of Computing?
+
+  - intent: degree_fee_payment_terms
+    examples: |
+      - What are the fees and payment terms for BSc (Hons) in Computer Science?
+      - Tell me about the payment terms for BSc (Hons) in Software Engineering
+      - How can I pay for the Computer Engineering course?
+      - Give me details on the fees and payment structure for Data Science
+      - What are the payment options for IT degree?
+      - Can I pay for Information Systems in installments?
+
