@@ -76,6 +76,7 @@ nlu:
       - How much is the fee for a computer science degree?
       - Tell me the fees for a computer science degree
       - What is the fee for a computer science course?
+      - 
       - Course fees for computer science?
 
   - intent: course_fees_software_engineering

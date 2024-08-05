@@ -7,57 +7,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            font-family: Consolas, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: url("{{ url_for('static', filename='images/bck.jpg') }}") no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-        }
+    font-family: Consolas, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("{{ url_for('static', filename='images/bck.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+}
 
-        .chat-container {
-            width: 100%;
-            max-width: 800px;
-            background-color: #2bb1ea33;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0);
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 90vh;
-        }
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #2bb1ea33;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    position: relative;
+}
 
-        .chat-content {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 10px); /* Adjust height to accommodate footer */
+    padding-bottom: 5px; /* Adjust the padding to make space for the footer */
+}
 
-        .chat-header {
-            background-color: #006de2;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-        }
+.chat-header {
+    background-color: #006de2;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
 
-        .chat-messages {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            background-color: #f9f9f925;
-            display: flex;
-            flex-direction: column;
-        }
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f925;
+    display: flex;
+    flex-direction: column;
+}
 
-        .chat-message {
+.chat-message {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 15px;
@@ -107,108 +109,117 @@
     display: block;
 }
 
+.chat-input {
+    display: flex;
+    border-top: 1px solid #e9ecef00;
+    background-color: #76a3d2c0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+}
 
-        .chat-input {
-            display: flex;
-            border-top: 1px solid #e9ecef00;
-            background-color: #76a3d2c0;
-            padding: 10px;
-            position: sticky;
-            bottom: 0;
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 1;
-        }
+.chat-input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    font-family: Consolas, monospace;
+    background-color: #91a9c3;
+    border-radius: 15px;
+    margin-right: 10px;
+}
 
-        .chat-input input {
-            flex: 1;
-            border: none;
-            padding: 10px;
-            font-size: 16px;
-            color: #000000;
-            outline: none;
-            font-family: Consolas, monospace;
-            background-color: #87a2bf;
-            border-radius: 15px;
-            margin-right: 10px;
-        }
+.chat-input input::placeholder {
+    color: #000000;
+}
 
-        .chat-input input::placeholder {
-            color: #000000;
-        }
+.chat-input button {
+    background-color: #004692d8;
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: Consolas, monospace;
+    font-size: 17px;
+    border-radius: 15px;
+}
 
-        .chat-input button {
-            background-color: #004692d8;
-            border: none;
-            color: #ffffff;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-family: Consolas, monospace;
-            font-size: 17px;
-            border-radius: 15px;
-        }
+.chat-input button:hover {
+    background-color: #0056b3;
+}
 
-        .chat-input button:hover {
-            background-color: #0056b3;
-        }
+.chat-input .spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 4px solid rgba(0, 123, 255, 0);
+    border-top-color: #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
 
-        .chat-input .spinner {
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 4px solid rgba(0, 123, 255, 0);
-            border-top-color: #007bff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-left: 10px;
-        }
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+@media (max-width: 600px) {
+    .chat-container {
+        flex-direction: column;
+    }
 
-        @media (max-width: 600px) {
-            .chat-container {
-                flex-direction: column;
-            }
+    .chat-header {
+        font-size: 16px;
+    }
 
-            .chat-header {
-                font-size: 16px;
-            }
+    .chat-input input, .chat-input button {
+        font-size: 14px;
+        padding: 8px;
+    }
 
-            .chat-input input, .chat-input button {
-                font-size: 14px;
-                padding: 8px;
-            }
+    .chat-message {
+        font-size: 14px;
+    }
+}
 
-            .chat-message {
-                font-size: 14px;
-            }
-        }
-    /* Additional styles for voice controls */
-    .voice-controls {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            background-color: #76a3d2c0;
-            border-top: 1px solid #e9ecef00;
-        }
+/* Additional styles for voice controls */
+.voice-controls {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #76a3d2c0;
+    border-top: 1px solid #e9ecef00;
+}
 
-        .voice-controls button {
-            background-color: #004692d8;
-            border: none;
-            color: #ffffff;
-            padding: 10px;
-            margin: 0 5px;
-            cursor: pointer;
-            font-family: Consolas, monospace;
-            font-size: 17px;
-            border-radius: 15px;
-        }
+.voice-controls button {
+    background-color: #004692d8;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-family: Consolas, monospace;
+    font-size: 17px;
+    border-radius: 10px;
+}
 
-        .voice-controls button:hover {
-            background-color: #0056b3;
-        }
+.voice-controls button:hover {
+    background-color: #0056b3;
+}
+
+.chat-footer {
+    background-color: #006de2;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: relative; /* Change to relative */
+    width: 100%; /* Ensure footer spans full width */
+    height: 20px; /* Ensure footer has a fixed height */
+}
 
     </style>
 </head>
@@ -227,6 +238,9 @@
                 <button onclick="stopSpeechRecognition()">Stop Speech Recognition</button>
                 <button onclick="speakMessage()">Speak Last Message</button>
             </div>
+        </div>
+        <div class="chat-footer">
+            © 2024 KDU Bot. All rights reserved by Hasindu Nimesh.
         </div>
     </div>
 
@@ -251,7 +265,7 @@
             var messagesDiv = document.getElementById('messages');
             var newMessage = document.createElement('div');
             newMessage.classList.add('chat-message', sender);
-            
+
             // Add the copy button
             var copyButton = document.createElement('button');
             copyButton.classList.add('copy-btn');
@@ -340,7 +354,7 @@
                 alert('Speech recognition not supported.');
                 return;
             }
-            
+
             recognition = new webkitSpeechRecognition();
             recognition.lang = 'en-US';
             recognition.interimResults = false;
