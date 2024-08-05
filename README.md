@@ -1,4 +1,4 @@
-Sure! Here's a sample repository description for the General Sir John Kotelawala Defence University Chat Bot:
+Sure! Here's an updated version of your repository description that includes steps to run the new file:
 
 ---
 
@@ -13,6 +13,7 @@ This project is a web-based chatbot designed to provide information about the Ge
 - **User-Friendly Design:** Simple and intuitive design for easy interaction.
 - **Scrollable Chat Panel:** Allows users to scroll through previous messages.
 - **Enter Key Message Sending:** Users can send messages by pressing the Enter key.
+- **Voice Control:** Start and stop speech recognition, and listen to the chatbot's responses.
 
 ## How to Use
 
@@ -24,13 +25,21 @@ This project is a web-based chatbot designed to provide information about the Ge
    ```
    cd kdu-chat-bot
    ```
-3. Open `index.html` in a web browser to start using the chatbot.
+3. Install the necessary dependencies:
+   ```
+   npm install
+   ```
+4. Start the server:
+   ```
+   node server.js
+   ```
+5. Open `index.html` in a web browser to start using the chatbot.
 
 ## Technologies Used
 
 - HTML, CSS, JavaScript for the frontend.
 - Socket.io for real-time communication.
-- Node.js for the backend server (if applicable).
+- Node.js for the backend server.
 
 ## Contributing
 
@@ -41,3 +50,5 @@ We welcome contributions to improve the chatbot. Please feel free to submit a pu
 This project is licensed under the MIT License.
 
 ---
+
+(https://github.com/HasinduNimesh/General-Sir-John-Kotelawala-Defence-University-Chat-Bot)
