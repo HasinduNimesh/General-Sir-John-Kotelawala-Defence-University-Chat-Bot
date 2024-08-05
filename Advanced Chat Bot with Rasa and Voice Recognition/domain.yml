@@ -34,7 +34,7 @@ responses:
     - text: "The course curriculum varies depending on the degree. For details, please specify the degree you're interested in."
 
   utter_university_details:
-    - text: "General Sir John Kotelawala Defence University is a prestigious university with a range of faculties and courses."
+    - text: "The General Sir John Kotelawala Defence University (KDU) is Sri Lanka’s premier military university.KDU was initially established as the General Sir John Kotelawala Defence Academy in 1980 by the Parliamentary Act No. 68 of 1981. It was elevated to university status in 2007"
 
   utter_kdu_info:
     - text: "KDU stands for General Sir John Kotelawala Defence University. It's known for its diverse academic programs."
@@ -61,7 +61,7 @@ responses:
     - text: "KDU offers several degrees in various fields. For a detailed list, please visit the university's website."
 
   utter_faculties_count:
-    - text: "KDU has 10 faculties:
+    - text: "KDU has 11 faculties:
 
 Faculty of Defence & Strategic Studies (FDSS)
 Faculty of Medicine (FOM)
